@@ -10,14 +10,17 @@ const Rank = () => {
     });
   }, []);
 
+  const slicedPopularMovies = popularMovies.slice(0, 9);
+
   return (
-    <section>
+    // 스크롤링 예정
+    <aside>
       <ul>
-        {popularMovies.map((it:Result) => (
+        {slicedPopularMovies.map((it: Result) => (
           <li key={it.id}>{it.title}</li>
         ))}
       </ul>
-    </section>
+    </aside>
   );
 };
 
