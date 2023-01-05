@@ -16,6 +16,11 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.font{
+  font-family: var(--monts), nanumsquare;
+  font-weight: 400;
+}
 `;
 
 export default GlobalStyle;

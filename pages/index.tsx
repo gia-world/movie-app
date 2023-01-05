@@ -8,7 +8,7 @@ import Head from "next/head";
 export default function Home() {
   return (
     <>
-      <GlobalStyle />
+      {/* <GlobalStyle /> */}
       <Layout>
         <main>
           <Rank />

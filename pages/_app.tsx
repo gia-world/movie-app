@@ -1,8 +1,9 @@
 // import '../styles/globals.css'
 import type { AppProps } from "next/app";
-import styled from "styled-components";
 import { Montserrat, Noto_Sans_KR } from "@next/font/google";
+import GlobalStyle from "../components/GlobalStyle";
 
+/* 폰트 변수 선언, GlobalStyle에서 변수 사용 */
 export const montserrat = Montserrat({ subsets: ["latin"], variable: "--monts" });
 export const notosans = Noto_Sans_KR({
   subsets: ["korean"],
@@ -10,17 +11,12 @@ export const notosans = Noto_Sans_KR({
   variable: "--noto",
 });
 
-export const Font = styled.div`
-  font-family: var(--monts), var(--noto);
-  font-weight: 400;
-`;
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className={[montserrat.variable, notosans.variable].join(" ")}>
-      <Font>
+    <div className={`${montserrat.variable} ${notosans.variable} font`}>
+      <GlobalStyle/>
         <Component {...pageProps} />
-      </Font>
     </div>
   );
 }
