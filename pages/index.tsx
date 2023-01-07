@@ -1,14 +1,10 @@
-import styles from "../styles/Home.module.css";
 import Rank from "../components/Rank";
 import Search from "../components/Search";
-import Layout from "../components/Layout";
-import GlobalStyle from "../components/GlobalStyle";
-import Head from "next/head";
+import Layout from "../components/layout/Layout";
 
 export default function Home() {
   return (
     <>
-      {/* <GlobalStyle /> */}
       <Layout>
         <main>
           <Rank />

@@ -3,13 +3,11 @@ const nextConfig = {
   reactStrictMode: true,
   compiler: {
     // Enables the styled-components SWC transform
-    styledComponents: true
+    styledComponents: true,
   },
-  experimental: {
-    fontLoaders: [
-      { loader: '@next/font/google', options: { subsets: ['latin','korean'] } },
-    ],
+  images: {
+    remotePatterns: [{ protocol: "https", hostname: "www.themoviedb.org", port: "", pathname: "/t/p/w220_and_h330_face/**" }],
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

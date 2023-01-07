@@ -1,13 +1,47 @@
+import { GetServerSidePropsContext } from "next";
+import React from "react";
+import Detail from "../../components/movie/Detail";
+import { Result } from "../../components/type";
+import { moviesApi } from "../api/tmdb";
 
-import React from 'react'
+const getMovie = async (id: string) => {
+  return await moviesApi.movieDetail(id)
+  .then(function (res) {
+    // console.log(res.data,'getmovie')
+    return res.data;
+  });
+};
 
-const Movie = () => {
-  return (
-    <>
-    
-    </>
-  )
+interface Props{
+  movie:Result;
 }
 
-export default Movie
+const Movie = ({movie}:Props) => {
+  console.log('movie',movie)
+  return (
+    <>
+      <Detail 
+      id={movie.id}
+        title={movie.original_title}
+        date={movie.release_date}
+        country={movie.production_countries[0].name}
+        runtime={movie.runtime}
+        vote={movie.vote_average}
+        genres={movie.genres}
+        poster_path={movie.poster_path}
+        overview={movie.overview}
+      />
+    </>
+  );
+};
 
+export default Movie;
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const id = context.params!.id as string;
+  console.log("--------------------", id);
+  const movie = await getMovie(id);
+  return {
+    props: { movie }, // will be passed to the page component as props
+  };
+}

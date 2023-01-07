@@ -26,4 +26,21 @@ export interface Result {
   video: boolean;
   vote_average: number;
   vote_count: number;
+  production_countries:[{
+    name:string
+  }];
+  runtime:number;
+  genres:[]
+}
+export interface MyDetail {
+  id: number;
+  title: string;
+  overview: string;
+  poster_path: string;
+  date: Date;
+  vote: number;
+  runtime:number;
+  // genres:string;
+  country:string;
+  genres:[]
 }

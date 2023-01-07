@@ -13,7 +13,6 @@ const Search = () => {
   };
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // console.log(searchInput,encodeURIComponent(searchInput))
     moviesApi.search(searchInput).then((it) => {
       console.log("search", it.data.results);
       setSearchResult(it.data.results);
