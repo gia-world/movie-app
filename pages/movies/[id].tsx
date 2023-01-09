@@ -1,4 +1,5 @@
 import { GetServerSidePropsContext } from "next";
+import Link from "next/link";
 import React from "react";
 import Detail from "../../components/movie/Detail";
 import { Result } from "../../components/type";
@@ -22,7 +23,7 @@ const Movie = ({movie}:Props) => {
     <>
       <Detail 
       id={movie.id}
-        title={movie.original_title}
+        title={movie.title}
         date={movie.release_date}
         country={movie.production_countries[0].name}
         runtime={movie.runtime}
@@ -31,6 +32,7 @@ const Movie = ({movie}:Props) => {
         poster_path={movie.poster_path}
         overview={movie.overview}
       />
+      <Link href="/">&lt; Back</Link>
     </>
   );
 };

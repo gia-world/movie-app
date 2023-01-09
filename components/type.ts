@@ -35,12 +35,12 @@ export interface Result {
 export interface MyDetail {
   id: number;
   title: string;
-  overview: string;
+  overview?: string;
   poster_path: string;
   date: Date;
   vote: number;
-  runtime:number;
+  runtime?:number;
   // genres:string;
-  country:string;
-  genres:[]
+  country?:string;
+  genres?:[]
 }
