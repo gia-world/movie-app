@@ -6,7 +6,7 @@ const nextConfig = {
     styledComponents: true,
   },
   images: {
-    remotePatterns: [{ protocol: "https", hostname: "www.themoviedb.org", port: "", pathname: "/t/p/w220_and_h330_face/**" }],
+    remotePatterns: [{ protocol: "https", hostname: "www.themoviedb.org", port: "", pathname: "/t/p/**" }],
   },
 };
 

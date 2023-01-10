@@ -8,10 +8,14 @@ const GlobalStyle = createGlobalStyle`
 html, body {height:100%;}
 img, picture, video, canvas, svg {display: block;max-width:100%;}
 button {background:none;border:0;cursor:pointer;}
-/* a {text-decoration:none} */
+a {text-decoration:none}
 table {border-collapse:collapse;border-spacing:0}
 button, input, select, textarea {font:inherit}
 ul,ol {list-style:none}
+
+:root{
+  --h:34px
+}
 
 .font{
   font-family: var(--monts), nanumsquare;

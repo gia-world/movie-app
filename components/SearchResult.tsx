@@ -6,14 +6,16 @@ import * as S from "./SearchResult.style";
 interface Props {
   searchResult: Result[];
 }
+
+
 const SearchResult = ({ searchResult }: Props) => {
   
   return (
     <S.SearchResult>
       {searchResult.length===0 ? 
        '검색 결과 없음'  :
-       <div className="search-result">
-        {searchResult&&searchResult.map((it:Partial<Result>) => <Card
+       <div className="result-wrap">
+        {searchResult&&searchResult.map((it:Result) => <Card
         key={it.id}
         id={it.id}
         title={it.title}
@@ -21,6 +23,7 @@ const SearchResult = ({ searchResult }: Props) => {
         vote={it.vote_average}
         genres={it.genres}
         poster_path={it.poster_path}
+        date={it.release_date}
         />
         )}
         </div>

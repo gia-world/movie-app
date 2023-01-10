@@ -21,7 +21,7 @@ export interface Result {
   overview: string;
   popularity: number;
   poster_path: string;
-  release_date: Date;
+  release_date:Date;
   title: string;
   video: boolean;
   vote_average: number;
@@ -40,7 +40,6 @@ export interface MyDetail {
   date: Date;
   vote: number;
   runtime?:number;
-  // genres:string;
   country?:string;
   genres?:[]
 }

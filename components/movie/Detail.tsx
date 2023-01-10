@@ -1,11 +1,12 @@
 import Image from 'next/image'
 import React from 'react'
 import { MyDetail } from '../type'
+import * as S from "./Detail.style";
 
 
 const Detail = ({id,title,date,country,runtime,vote,genres,poster_path,overview}:MyDetail) => {
   return (
-    <div key={id}>
+    <S.Detail key={id}>
         <Image src={`https://www.themoviedb.org/t/p/w220_and_h330_face${poster_path}`} alt={title}
         width="220"
         height="330"
@@ -24,7 +25,7 @@ const Detail = ({id,title,date,country,runtime,vote,genres,poster_path,overview}
           </ul>
           <p>{overview}</p>
         </div>
-    </div>
+    </S.Detail>
   )
 }
 
