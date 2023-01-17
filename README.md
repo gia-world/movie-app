@@ -6,3 +6,6 @@ used **Axios** to get data from TMDB
 
 ## Stats
 React.js / Next.js / TypeScript / styled component
+
+## Deployed Link
+TBC
