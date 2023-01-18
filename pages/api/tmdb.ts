@@ -48,7 +48,7 @@ export const tvApi = {
   search: (term:string) =>
     api.get("search/tv", {
       params: {
-        query: encodeURIComponent(term),
+        query:term
       },
     }),
 };

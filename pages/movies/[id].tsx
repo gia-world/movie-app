@@ -21,7 +21,6 @@ const Movie = ({ movie }: Props) => {
   console.log("movie", movie);
   return (
     <Layout>
-      <main>
         <Detail
           id={movie.id}
           title={movie.title}
@@ -34,7 +33,6 @@ const Movie = ({ movie }: Props) => {
           overview={movie.overview}
         />
         <Link href="/">&lt; Back</Link>
-      </main>
     </Layout>
   );
 };

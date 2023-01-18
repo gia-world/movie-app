@@ -1,9 +1,18 @@
 import styled from "styled-components";
 export const Rank = styled.aside`
-  width: 300px;
+  width: 70%;
+  max-width: 600px;
+  min-width: 300px;
+  margin: 0 auto;
+  h3+div{
+    margin-top: 10px;
+  }
+  + section{
+    margin-top: 60px;
+  }
+>div{
   height: 34px;
   overflow: hidden;
-  margin: 0 auto 30px;
   border: 1px solid #bbb;
   ul {
     animation: slideup 20s infinite;
@@ -15,7 +24,19 @@ export const Rank = styled.aside`
     }
   }
   a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     text-decoration: none;
+    span{
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 8px;
+      background-color: yellowgreen;
+    }
   }
   @keyframes slideup {
     0% {
@@ -54,8 +75,33 @@ export const Rank = styled.aside`
     58% {
       transform: translateY(calc(var(--h) * -5));
     }
+    60% {
+      transform: translateY(calc(var(--h) * -6));
+    }
+    68% {
+      transform: translateY(calc(var(--h) * -6));
+    }
+    70% {
+      transform: translateY(calc(var(--h) * -7));
+    }
+    78% {
+      transform: translateY(calc(var(--h) * -7));
+    }
+    80% {
+      transform: translateY(calc(var(--h) * -8));
+    }
+    88% {
+      transform: translateY(calc(var(--h) * -8));
+    }
+    90% {
+      transform: translateY(calc(var(--h) * -9));
+    }
+    98% {
+      transform: translateY(calc(var(--h) * -9));
+    }
     100% {
       transform: translateY(calc(var(--h) * -9));
     }
   }
+}
 `;

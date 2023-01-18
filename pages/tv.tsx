@@ -2,12 +2,11 @@ import Rank from "../components/Rank";
 import Search from "../components/Search";
 import Layout from "../components/layout/Layout";
 
-export default function Home() {
+export default function Tv() {
   return (
       <Layout>
-        <main>
-          Home
-        </main>
+          <Rank isTv={true}/>
+          <Search isTv={true}/>
       </Layout>
   );
 }

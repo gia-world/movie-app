@@ -6,6 +6,6 @@ export const SearchResult = styled.div`
     flex-wrap: wrap;
     gap: 50px 30px;
     max-width: 1000px;
-    margin: 40px auto;
+    margin: 0 auto;
   }
 `;

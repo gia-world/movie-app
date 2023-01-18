@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { MyDetail } from "../type";
+import { IsTv, MyDetail } from "../type";
 import * as S from "./Detail.style";
 
 const Detail = ({
@@ -13,7 +13,8 @@ const Detail = ({
   genres,
   poster_path,
   overview,
-}: MyDetail) => {
+  isTv
+}: MyDetail&IsTv) => {
   return (
     <S.Detail key={id}>
       <Image
@@ -24,10 +25,10 @@ const Detail = ({
         priority
       />
       <div>
-        <h3>{title}</h3>
+        <h2>{title}</h2>
         <p>Rating: {vote}</p>
         <p>Released on {`${date}, ${country}`}</p>
-        <p>Runtime: {runtime}min</p>
+        {isTv?null:(<p>Runtime: {runtime}min</p>)}
         <ul>
           {genres &&
             genres.map((it: { id: number; name: string }) => (

@@ -6,7 +6,8 @@ const Header = () => {
   return (
     <S.Header>
       <Link href="/">Home</Link>
-      
+      <Link href="/movie">Movie</Link>
+      <Link href="/tv">TV show</Link>
     </S.Header>
   )
 }

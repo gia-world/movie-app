@@ -1,14 +1,16 @@
 import styled from "styled-components";
 export const Search = styled.section`
   .search-input{
+    margin-bottom: 40px;
     .form{
       &__wrap{
         display: flex;
       align-content: center;
       justify-content: center;
-      gap: 10px;
+      gap: 20px;
       }
       &__input{
+        width: 220px;
         padding: 2px 4px;
         border: 0;
         border-bottom: 1px solid;

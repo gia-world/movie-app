@@ -30,7 +30,9 @@ export interface Result {
     name:string
   }];
   runtime:number;
-  genres:[]
+  genres:[];
+  name:string;
+  first_air_date:Date;
 }
 export interface MyDetail {
   id: number;
@@ -41,5 +43,9 @@ export interface MyDetail {
   vote: number;
   runtime?:number;
   country?:string;
-  genres?:[]
+  genres?:[];
+}
+
+export interface IsTv{
+  isTv?:boolean
 }

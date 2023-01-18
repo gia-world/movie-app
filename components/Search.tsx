@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { moviesApi } from "../pages/api/tmdb";
+import { moviesApi, tvApi } from "../pages/api/tmdb";
 import SearchResult from "./SearchResult";
-import { Result } from "./type";
 import * as S from "./Search.style";
+import { IsTv } from "./type";
 
-const Search = () => {
+const Search = ({isTv}:IsTv) => {
   const [searchInput, setSearchInput] = useState("");
   const [isSearched, setIsSearched] = useState(true);
   const [searchResult, setSearchResult] = useState([]);
@@ -14,10 +14,14 @@ const Search = () => {
   };
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    moviesApi.search(searchInput).then((it) => {
-      console.log("search", it.data.results);
+    isTv?(tvApi.search(searchInput).then((it) => {
+      console.log("searched-tv", it.data.results);
       setSearchResult(it.data.results);
-    });
+    })):
+    (moviesApi.search(searchInput).then((it) => {
+      console.log("searched-movie", it.data.results);
+      setSearchResult(it.data.results);
+    }))
     setSearchInput("");
     setIsSearched(false);
   };
@@ -27,7 +31,7 @@ const Search = () => {
       <div className="search-input">
         <form onSubmit={handleSubmit} className="form__wrap">
           <label htmlFor="name" className="form__label">
-            <input type="text" id="movie-title" className="form__input" name="movie_title" placeholder="영화 제목을 입력해주세요." value={searchInput} onChange={handleChange} 
+            <input type="text" id="movie-title" className="form__input" name="movie_title" placeholder={isTv? "TV 프로그램 제목을 입력해주세요.":"영화 제목을 입력해주세요."} value={searchInput} onChange={handleChange} 
             required />
           </label>
           <div className="btn-box">
@@ -38,8 +42,10 @@ const Search = () => {
 
       {/* searchResult */}
       {
-        isSearched?'검색어를 입력해 주세요':(
-          <SearchResult searchResult={searchResult}/>
+        isSearched?
+        (<p className="search-text">검색어를 입력해 주세요</p>)
+        :(
+          <SearchResult searchResult={searchResult} isTv={isTv}/>
         )
       }
     </S.Search>
