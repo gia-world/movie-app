@@ -31,7 +31,7 @@ const Search = ({isTv}:IsTv) => {
       <div className="search-input">
         <form onSubmit={handleSubmit} className="form__wrap">
           <label htmlFor="name" className="form__label">
-            <input type="text" id="movie-title" className="form__input" name="movie_title" placeholder={isTv? "TV 프로그램 제목을 입력해주세요.":"영화 제목을 입력해주세요."} value={searchInput} onChange={handleChange} 
+            <S.SearchInput type="text" id="movie-title" className="form__input" name={isTv? 'show-title':'movie-title'} placeholder={isTv? "TV 프로그램 제목을 입력해주세요.":"영화 제목을 입력해주세요."} value={searchInput} onChange={handleChange} 
             required />
           </label>
           <div className="btn-box">

@@ -12,4 +12,14 @@ export const Detail = styled.div`
   h2{
     margin-bottom: 10px;
   }
+  div{
+    p{
+        margin-top: 10px;
+    }
+    ul{
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+  }
 `;
